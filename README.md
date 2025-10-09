@@ -64,4 +64,4 @@ Stripe, Razorpay
 📧 Contact
 Rahul Kumar Shyanti – rahulshyanti37@gmail.com
 
-Project Link: https://github.com/your_username/CuraLink
+Project Link: https://curalink-wtuj.onrender.com
