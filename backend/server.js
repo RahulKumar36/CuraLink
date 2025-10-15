@@ -15,9 +15,24 @@ connectCloudinary()
 
 // middlewares
 app.use(express.json())
+// ---------- CORS ----------
+const allowedOrigins = [
+  "https://curalink-wtuj.onrender.com",       // user frontend
+  "https://curalink-admin-grxl.onrender.com"  // admin frontend
+];
+
 app.use(cors({
-  origin: 'https://curalink-wtuj.onrender.com'
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true); // allow curl/Postman
+    if (allowedOrigins.indexOf(origin) === -1) {
+      return callback(new Error("CORS policy blocked this origin"), false);
+    }
+    return callback(null, true);
+  },
+  credentials: true
 }));
+
+app.options("*", cors()); // handle preflight
 
 // api endpoints
 app.use("/api/user", userRouter)
