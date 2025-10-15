@@ -28,7 +28,7 @@ Authentication: Secure, role-based access control (Patient, Doctor, Admin).
 
 Cloud Storage: Seamless image handling for doctor profiles powered by Cloudinary.
 
-Payment Processing: Integrated and secure payment flows using Stripe and/or Razorpay.
+Payment Processing: Integrated and secure payment flows using Razorpay.
 
 🧰 Tech Stack
 The application is built using a modern and robust set of technologies to ensure scalability and performance.
@@ -59,7 +59,7 @@ Multer, Cloudinary
 
 Payment Gateway:
 
-Stripe, Razorpay
+Razorpay
 
 📧 Contact
 Rahul Kumar Shyanti – rahulshyanti37@gmail.com
