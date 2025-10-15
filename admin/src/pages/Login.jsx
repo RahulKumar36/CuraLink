@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react'
 import { DoctorContext } from '../context/DoctorContext'
 import { AdminContext } from '../context/AdminContext'
 import { toast } from 'react-toastify'
+import { useEffect } from 'react'
 
 const Login = () => {
 
@@ -15,6 +16,17 @@ const Login = () => {
 
   const { setDToken } = useContext(DoctorContext)
   const { setAToken } = useContext(AdminContext)
+
+    // Set default email/password based on current state
+  useEffect(() => {
+    if (state === 'Admin') {
+      setEmail('admin@curalink.com');
+      setPassword('admincuralink');
+    } else {
+      setEmail('richard@gmail.com');
+      setPassword('richard1234');
+    }
+  }, [state]);
 
   const onSubmitHandler = async (event) => {
     event.preventDefault();
